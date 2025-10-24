@@ -1,0 +1,57 @@
+@use "@/styles/variables" as *;
+
+.section-container.skillset {
+  .content-container {
+    width: 100%;
+    max-width: 1440px;
+    padding: 10px 30px;
+    flex-wrap: wrap;
+
+    .skill {
+      height: fit-content;
+      width: 70px;
+
+      img {
+        height: 60px;
+        width: 60px;
+        object-fit: contain;
+      }
+
+      span {
+        color: $white;
+        text-align: center;
+      }
+    }
+
+    .arrow-container {
+      padding: 2vh 0;
+
+      img {
+        height: 30px;
+        object-fit: contain;
+
+        @media (hover: hover) {
+          &:hover {
+            cursor: pointer;
+            filter: brightness(0.75);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .section-container.skillset {
+    .content-container {
+      gap: 25px;
+      padding: 10px 5vw;
+    }
+
+    .skill {
+      img {
+        height: 12vw !important;
+      }
+    }
+  }
+}

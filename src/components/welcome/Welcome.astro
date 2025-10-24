@@ -1,7 +1,44 @@
 ---
-
+import "./Welcome.scss";
 ---
 
-<div id="container">
-	
+<div id="welcome" class="section-container welcome center">
+    <div class="wrapper column gap-30">
+        <div class="header-container column gap-40">
+            <h1>Hi, I'm Lukas</h1>
+            <h2>FRONT-END DEVELOPER</h2>
+            <div class="button-container">
+                <button>Let's talk!</button>
+            </div>
+        </div>
+        <div class="image-container row between">
+            <div class="icon-container row gap-15 center">
+                <img onclick="openLink('github.com/lukasbuschdev')" src="img/github.svg" alt="github">
+                <img onclick="goToSection('#contact')" src="img/email.svg" alt="contact">
+                <img onclick="openLink('www.linkedin.com/in/lukas-busch-4192001b5/')" src="img/linkedin.svg" alt="linkedin">
+                <img onclick="openLink('lukasbusch.dev/cv/lukas-busch-cv-en.pdf')" src="img/cv.svg" alt="cv">
+            </div>
+            <div class="arrow-container center column gap-10">
+                <span onclick="goToSection('#profile')">Scroll</span>
+                <img onclick="goToSection('#profile')" src="img/arrows.svg" alt="next section">
+            </div>
+
+            <div class="character-container">
+                <img src="img/character.webp" alt="me">
+            </div>
+        </div>
+    </div>
 </div>
+
+<script is:inline>
+  function goToSection(selector) {
+    document.querySelector(selector)?.scrollIntoView();
+  }
+
+  function openLink(link) {
+    window.location.href = 'https://' + link;
+  }
+
+  window.goToSection = goToSection;
+  window.openLink = openLink;
+</script>

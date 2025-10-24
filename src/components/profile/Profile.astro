@@ -1,0 +1,34 @@
+---
+import "./Profile.scss";
+---
+
+<div id="profile" class="section-container profile center">
+    <div class="wrapper column center">
+        <div class="header-container">
+            <h2>Profile</h2>
+        </div>
+    
+        <div class="content-container center">
+            <div class="text-container">
+                <span>
+                    I am a Web Developer based in Mérida, Mexico, specializing in Angular, TypeScript, and SCSS. 
+                    With a background in both front-end development and system administration, I build secure and performant applications. 
+                    I am the co-founder of Lengo, a rental platform designed to redefine access and sustainability through technology. 
+                    I am driven by continuous learning and have a strong interest in cybersecurity and its impact on the future of the web.
+                </span>
+            </div>
+        </div>
+    
+        <div class="arrow-container">
+            <img onclick="goToSection('#skillset')" src="img/arrow-single.svg" alt="next section">
+        </div>
+    </div>
+</div>
+
+<script is:inline>
+  function goToSection(selector) {
+    document.querySelector(selector)?.scrollIntoView();
+  }
+
+  window.goToSection = goToSection;
+</script>

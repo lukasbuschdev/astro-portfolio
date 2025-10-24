@@ -1,0 +1,138 @@
+@use "@/styles/variables" as *;
+
+.section-container.welcome {
+  height: 100vh;
+  height: 100dvh;
+  width: 100%;
+
+  .wrapper {
+    position: relative;
+    height: 100vh;
+    height: 100dvh;
+    width: 100%;
+    max-width: 1440px;
+    justify-content: center;
+    align-items: flex-start;
+
+    h1,
+    h2 {
+      width: 100%;
+      text-align: left;
+    }
+
+    h2 {
+      color: $white;
+    }
+  }
+
+  .button-container {
+    width: 100%;
+
+    button {
+      font-family: "Exo 2";
+      color: #00ffe0;
+      font-size: 1.2rem;
+      border: 1px solid #00ffe0;
+      padding: 10px 15px;
+      transition: $transition;
+
+      @media (hover: hover) {
+        &:hover {
+          cursor: pointer;
+          color: #000807;
+          background-color: #00ffe0;
+          box-shadow: 0 0 7px #63ffd8;
+          transition: $transition;
+        }
+      }
+    }
+  }
+
+  .icon-container {
+    position: absolute;
+    bottom: 3vh;
+    left: 0;
+
+    img {
+      max-height: 30px;
+      height: 5vw;
+      min-height: 25px;
+      object-fit: contain;
+
+      @media (hover: hover) {
+        &:hover {
+          cursor: pointer;
+          filter: brightness(0.75);
+        }
+      }
+    }
+  }
+
+  .arrow-container {
+    position: absolute;
+    bottom: 3vh;
+    right: 0;
+
+    span {
+      color: $white;
+      width: 0;
+      transform: rotate(-90deg);
+
+      @media (hover: hover) {
+        &:hover {
+          cursor: pointer;
+          filter: brightness(0.75);
+        }
+      }
+    }
+
+    img {
+      max-height: 50px;
+      height: 10vw;
+      min-height: 40px;
+      object-fit: contain;
+
+      @media (hover: hover) {
+        &:hover {
+          cursor: pointer;
+          filter: brightness(0.75);
+        }
+      }
+    }
+  }
+
+  .character-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+
+    img {
+      height: 85vw;
+      max-height: 600px;
+      min-height: 400px;
+      object-fit: contain;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .section-container.welcome {
+    .header-container {
+      transform: translateY(-15vh);
+      gap: 10vw;
+    }
+
+    h4 {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-height: 700px) {
+  .section-container.welcome {
+    .character-container img {
+      max-height: 500px;
+    }
+  }
+}

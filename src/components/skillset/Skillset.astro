@@ -1,0 +1,49 @@
+---
+import "./Skillset.scss";
+
+type Skill = { name: string; img: string };
+
+const skillset: Skill[] = [
+  { name: 'Angular', img: 'img/angular.svg' },
+  { name: 'TypeScript', img: 'img/ts.svg' },
+  { name: 'JavaScript', img: 'img/js.svg' },
+  { name: 'HTML', img: 'img/html.svg' },
+  { name: 'CSS/SCSS', img: 'img/css.svg' },
+  { name: 'Node', img: 'img/node.svg' },
+  { name: 'REST-API', img: 'img/api.svg' },
+  { name: 'Supabase', img: 'img/supabase.svg' },
+  { name: 'Firebase', img: 'img/firebase.svg' },
+  { name: 'GIT', img: 'img/git.svg' },
+  { name: 'Material Design', img: 'img/materialdesign.svg' },
+  { name: 'Scrum', img: 'img/scrum.svg' }
+];
+---
+
+<div id="skillset" class="section-container skillset column center gap-30">
+    <div class="header-container">
+        <h2>Skillset</h2>
+    </div>
+
+    <div class="content-container center row gap-40">
+        {
+            skillset.map((skill) => (
+                <div class="skill column gap-10 center">
+                    <img src={skill.img} alt={skill.name || 'skill'}/>
+                    <span>{skill.name}</span>
+                </div>
+            ))
+        }
+    </div>
+
+    <div class="arrow-container">
+        <img onclick="goToSection('#projects')" src="img/arrow-single.svg" alt="next section">
+    </div>
+</div>
+
+<script is:inline>
+  function goToSection(selector) {
+    document.querySelector(selector)?.scrollIntoView();
+  }
+
+  window.goToSection = goToSection;
+</script>
